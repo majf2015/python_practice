@@ -8,7 +8,6 @@ def pops():
         print 'stack is empty'
     else:
         print '%s' % stack.pop(0) , 'is removed form stack'
-
 def views():
     print stack
 
@@ -19,7 +18,6 @@ def menus():
         p:pops
         v:views
         q:quit
-
         enter choice: '''
     while True:
         while True:
