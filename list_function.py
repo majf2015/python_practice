@@ -1,4 +1,4 @@
-#coding = utf-8
+# encoding:utf-8
 import time
 import math
 
@@ -74,7 +74,7 @@ def recursive_loop(l):
         return recursive_loop(l) + p
 
 
-#“主运行程序，计算运行时间”
+#---主运行程序，计算运行时间---
 start_time = time.clock()
 list = [1, 2, 3, 8, 10, 8, 9, 6, 4, 16]
 string = ''
