@@ -24,6 +24,29 @@ def add(s1, s2):
     print ss
 
 
+#---另一种用数列表示整数加运算---
+def add1(s1, s2):
+    if len(s1) < len(s2):
+        sss3 = s2
+        s2 = s1
+        s1 = sss3
+    sss = ''
+    sss1 = '0'
+    for i in range(1, len(s2) + 1):
+        sss2 = str(int(s1[-i]) + int(s2[-i]) + int(sss1) )
+        sss1 = '0'
+        if len(sss2) == 2:
+            sss1 = sss2[0]
+            sss2 = sss2[1]
+        sss = sss2 +sss
+
+
+    sss = str(int(s1[:len(s1) - len(s2)]) + int(sss1)) + sss
+
+
+    print sss
+
+
 #---用数列表示减运算---
 def reduce(s1, s2):
     ss = ['0', '0']
@@ -58,9 +81,14 @@ s1 = '33.33'
 s2 = '232.276'
 s3 = '33'
 s4 = '232'
+s5 = '1111123'
+s6 = '92'
 
 add(s1, s2)
 add(s1, s4)
 add(s2, s3)
 add(s3, s4)
+add1(s3, s4)
+add(s5, s6)
+add1(s5, s6)
 reduce(s1, s2)
