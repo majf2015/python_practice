@@ -59,8 +59,9 @@ def tear_list(sorted1, sorted2):
         ret_sort.append(sorted1[i])
         i += 1
     while j < len(sorted2):
-        ret_sort.append(sorted1[j])
+        ret_sort.append(sorted2[j])
         j += 1
+    return ret_sort
 
 
 
