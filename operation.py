@@ -21,7 +21,7 @@ def add(s1, s2):
     sss = str(float('0.' + ss1[1]) + float('0.' + ss2[1]))
     ss[0] = str(int(ss1[0]) + int(ss2[0]) + int(sss.split('.')[0]))
     ss[1] = str(int(sss.split('.')[1]))
-    print ss
+    return ss
 
 
 #---另一种用数列表示整数加运算---
@@ -44,7 +44,7 @@ def add1(s1, s2):
     sss = str(int(s1[:len(s1) - len(s2)]) + int(sss1)) + sss
 
 
-    print sss
+    return sss
 
 
 #---用数列表示减运算---
@@ -73,22 +73,4 @@ def reduce(s1, s2):
     if b:
         ss[0] = '-' + ss[0]
 
-    print ss
-
-
-
-s1 = '33.33'
-s2 = '232.276'
-s3 = '33'
-s4 = '232'
-s5 = '1111123'
-s6 = '92'
-
-add(s1, s2)
-add(s1, s4)
-add(s2, s3)
-add(s3, s4)
-add1(s3, s4)
-add(s5, s6)
-add1(s5, s6)
-reduce(s1, s2)
+    return ss
