@@ -7,8 +7,8 @@ class Steps:
 
     def main(self):
         self.input()
-        print self.get_steps()
-        print self.range_test()
+        self.get_steps()
+        self.range_test()
 
     def input(self):
         try:
@@ -29,18 +29,75 @@ class Steps:
         range_test3 = range(-20, 861, 220)
         return range_test1, range_test2, range_test3
 
-class PrimeOrNot:
+class Factor:
     def __init__(self, num):
         self.num = num
+        self.factors = set([1, self.num])
+        self.prime_factors = []
+        self.count = self.num / 2
 
-    def prim_or_not(self):
+    def prim_or_not(self, num):
+        count = num / 2
+        while count > 1:
+            if num % count == 0:
+                return False
+            count -= 1
+        return True
+
+    def get_factors(self):
         count = self.num / 2
         while count > 1:
             if self.num % count == 0:
+                self.factors.add(count)
+                self.factors.add(self.num / count)
                 count -= 1
-                return False
             else:
+                count -= 1
+        return self.factors
+
+    def get_prime_factors(self, num):
+        count = num / 2
+        if self.prim_or_not(num):
+            return self.prime_factors
+        else:
+            while count > 1:
+                if num % count == 0:
+                    self.prime_factors.append(num / count)
+                    if self.prim_or_not(count):
+                        self.prime_factors.append(count)
+                        return self.prime_factors
+                    else:
+                        return self.get_prime_factors(count)
+                count -= 1
+
+    def perfect_or_not(self):
+        if self.prim_or_not(self.num):
+            return False
+        else:
+            factors = list(self.get_factors())
+            count = 0
+            for i in factors:
+                count += i
+            if count == 2 * self.num:
                 return True
+            else:
+                return False
 
+    def get_N(self, num):
+        N = 1
+        for i in range(1, num + 1):
+            N = N * i
+        return N
 
+    def fibonacci(self, n):
+        a, b , i= 1, 1, 3
+        fib = [1, 1]
+        while i <= n:
+            a, b = b, a + b
+            fib.append(b)
+            i += 1
+        return fib
+
+class TextProcess:
+    def __init__(self):
 
