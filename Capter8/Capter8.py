@@ -1,3 +1,7 @@
+import re
+
+
+
 class Steps:
     def __init__(self):
         self.fro = 0
@@ -99,5 +103,91 @@ class Factor:
         return fib
 
 class TextProcess:
-    def __init__(self):
+    def __init__(self, text):
+        self.text = text
+        self.name = []
+
+    def count_text(self):
+        count_u, count_f, count_w = 0, 0, 0
+        s = re.compile("\w")
+        for word in self.text:
+            if word in "aeiouAEIOU":
+                count_u += 1
+            elif s.match(word):
+                count_f += 1
+        count_w = len(self.text.split())
+        return count_u, count_f, count_w
+
+    def name_format(self, name):
+        if  re.match( r"^ *[a-zA-Z]+ *, *[a-zA-Z]+ *$", name):
+            self.name.append("".join(name.split()))
+            return 1
+        elif re.match( r"^ *[a-zA-Z]+ *[a-zA-Z]+ *$", name):
+            self.name.append("%s,%s" % (name.split()[1], name.split()[0]))
+            return 0
+        else:
+            return -1
+
+    def input(self):
+        num = raw_input("Enter total number of names:")
+        wrong_time = 0
+        for n in num:
+            name = raw_input("Please enter name %d" % n)
+            if self.name_format(name) == 0:
+                wrong_time += 1
+                print "Wrong format... should be Last, First."
+                print "You have done this %d time(s) already. Fixing input..." % wrong_time
+
+    def show_name(self):
+        print "The sorted list (by last name) is:"
+        for name in self.name:
+            print name
+
+class CodeTable:
+    def __init__(self, begi, en):
+        self.begin = begi
+        self.end = en
+        self.dec = []
+        self.count_chr = 0
+        self.lenth = 0
+
+    def input(self):
+        try:
+            beg = int(raw_input("Enter begin value:"))
+            e = int(raw_input("Enter end value:"))
+        except:
+            print "begin/end must integer"
+            self.input()
+
+        if beg > e:
+            print "begin must lest then end"
+            self.input()
+        else:
+            self.begin = beg
+            self.end = e
+
+    def code(self, begin, end):
+        for num in range(begin, end + 1):
+            if num < 0 or num > 255:
+                self.dec.append([num, bin(num), oct(num), hex(num)])
+            else:
+                self.dec.append([num, bin(num), oct(num), hex(num), chr(num)])
+                self.count_chr += 1
+
+    def print_code_table(self):
+        if self.count_chr != 0:
+            print "DEC     BIN     OCT     HEX     "
+            print "--------------------------------"
+            for row in self.dec:
+                print row[0],row[1],row[2],row[3]
+
+
+
+
+
+
+
+
+
+
 

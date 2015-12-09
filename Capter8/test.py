@@ -1,10 +1,13 @@
 import unittest
-from  Capter8 import Steps, Factor
+from  Capter8 import Steps, Factor,TextProcess,CodeTable
 
 class Capter8Test(unittest.TestCase):
     def setUp(self):
         self.data_test_steps = [2, 20, 3]
         self.data_prime_or_not = [1, 2, 3, 7, 8, 9, 10, 15]
+        self.data_text = "this book is mine"
+        self.data_name = ["ma jinfeng", "ma  jinfeng", "  ma jinfeng  ", "jinfeng,ma", "jinfeng  , ma"
+            , " jinfeng,ma  ", "ma jin feng", "jin,feng,ma"]
 
     def test_steps(self):
         print "test_steps"
@@ -25,4 +28,20 @@ class Capter8Test(unittest.TestCase):
             print 'perfect_or_not:',p.perfect_or_not()
             print 'get_N:', p.get_N(num)
             print 'fibonacci:', p.fibonacci(num)
+
+    def test_text_process(self):
+        tp = TextProcess(self.data_text)
+        print tp.count_text()
+        for name in self.data_name:
+            print tp.name_format(name)
+        tp.show_name()
+
+    def test_code_table(self):
+        tab = CodeTable(1, 5)
+        tab.code(1, 5)
+        tab.print_code_table()
+
+
+
+
 
