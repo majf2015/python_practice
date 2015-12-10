@@ -170,7 +170,7 @@ class CodeTable:
     def code(self, begin, end):
         for num in range(begin, end + 1):
 
-            if num < 0 or num > 255:
+            if num < 33 or num > 126:
                 self.dec.append([num, bin(num), oct(num), hex(num)])
             else:
                 self.dec.append([num, bin(num), oct(num), hex(num), chr(num)])

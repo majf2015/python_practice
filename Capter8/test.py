@@ -8,7 +8,7 @@ class Capter8Test(unittest.TestCase):
         self.data_text = "this book is mine"
         self.data_name = ["ma jinfeng", "ma  jinfeng", "  ma jinfeng  ", "jinfeng,ma", "jinfeng  , ma"
             , " jinfeng,ma  ", "ma jin feng", "jin,feng,ma"]
-        self.data_table = [[1, 10], [33, 43], [250, 260], [400, 410]]
+        self.data_table = [[1, 10], [33, 43], [120, 130], [400, 410]]
 
     def test_steps(self):
         print "test_steps"
