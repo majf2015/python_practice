@@ -149,7 +149,7 @@ class CodeTable:
         self.end = en
         self.dec = []
         self.count_chr = 0
-        self.lenth = 0
+        self.lenth = len(bin(en)) + 3
 
     def input(self):
         try:
@@ -165,21 +165,44 @@ class CodeTable:
         else:
             self.begin = beg
             self.end = e
+            self.lenth = len(bin(e)) + 3
 
     def code(self, begin, end):
         for num in range(begin, end + 1):
+
             if num < 0 or num > 255:
                 self.dec.append([num, bin(num), oct(num), hex(num)])
             else:
                 self.dec.append([num, bin(num), oct(num), hex(num), chr(num)])
                 self.count_chr += 1
 
-    def print_code_table(self):
-        if self.count_chr != 0:
-            print "DEC     BIN     OCT     HEX     "
-            print "--------------------------------"
+    def print_table(self):
+        print "New Code Table:"
+        if self.count_chr == 0:
+            if self.lenth < 3:
+                self.lenth = 3
+            print "%sDEC%sBIN%sOCT%sHEX" % \
+                  (" " * (self.lenth - 3), " " * (self.lenth - 3), " " * (self.lenth - 3), " " * (self.lenth - 3))
+        else:
+            if self.lenth < 5:
+                self.lenth = 5
+            print "%sDEC%sBIN%sOCT%sHEX%sASCII" % \
+                  (" " * (self.lenth - 3), " " * (self.lenth - 3), " " * (self.lenth - 3), " " * (self.lenth - 3), " " * (self.lenth - 5))
+
+    def print_code(self):
             for row in self.dec:
-                print row[0],row[1],row[2],row[3]
+                if len(row) == 5:
+                    print " "* (self.lenth - 1 - len(str(row[0]))) , row[0]\
+                      , " "* (self.lenth - 2 - len(row[1])) , row[1]\
+                      , " "* (self.lenth - 2 - len(row[2])) , row[2]\
+                      , " "* (self.lenth - 2 - len(row[3])) , row[3]\
+                      , " "* (self.lenth - 2 -len(row[4])) , row[4]
+                else:
+                    print " "* (self.lenth - 1 - len(str(row[0]))) , row[0]\
+                      , " "* (self.lenth - 2 - len(row[1])) , row[1]\
+                      , " "* (self.lenth - 2 - len(row[2])) , row[2]\
+                      , " "* (self.lenth - 2 - len(row[3])) , row[3]\
+
 
 
 

@@ -8,6 +8,7 @@ class Capter8Test(unittest.TestCase):
         self.data_text = "this book is mine"
         self.data_name = ["ma jinfeng", "ma  jinfeng", "  ma jinfeng  ", "jinfeng,ma", "jinfeng  , ma"
             , " jinfeng,ma  ", "ma jin feng", "jin,feng,ma"]
+        self.data_table = [[1, 10], [33, 43], [250, 260], [400, 410]]
 
     def test_steps(self):
         print "test_steps"
@@ -37,9 +38,11 @@ class Capter8Test(unittest.TestCase):
         tp.show_name()
 
     def test_code_table(self):
-        tab = CodeTable(1, 5)
-        tab.code(1, 5)
-        tab.print_code_table()
+        for data in self.data_table:
+            tab = CodeTable(data[0], data[1])
+            tab.code(data[0], data[1])
+            tab.print_table()
+            tab.print_code()
 
 
 
