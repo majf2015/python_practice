@@ -1,0 +1,28 @@
+领取方式：
+注册有礼（没有发放数量限制）（没有技师打赏选项）
+当商家创建注册有礼券后，注册用户进入会所界面，既可以获得注册有礼券，商家手动终止为止。
+When businesses to create a registration certificate, registered user interface into the club, can either be registered with gift certificates, merchant manually terminated.
+普通券，裂变券（裂变券没有发放数量限制）
+1，用户可以在会所首页进行领取，领取时需要登录注册。领取完成在个人中心优惠券中显示。
+2，朋友分享的链接，输入手机号码进行领取，无需注册（优惠券已经放入此零时帐号中），领取完成后提示在9358公众号个人中心中查看并使用。
+3，对于已经过期和已下线的优惠券，打开链接分别增加已过期和已下线界面。
+查看方式：
+统一在会所个人中心优惠券或者9358个人中心优惠券中查看并使用。
+添加优惠码（一个优惠券代表一张券的一次使用机会），每个优惠码带有一个二维码，二维码由之前代表手机号码，转而代替优惠码。writewritelineswrite lines
+write
+
+writelines
+
+write lines
+
+write
+
+writelines
+
+write lines
+
+write
+
+writelines
+
+write lines
