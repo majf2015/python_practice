@@ -1,8 +1,8 @@
-
+import re
 
 class FileMane:
     def __init__(self):
-        pass
+        self.filter_comment = []
     def  read(self, t):
         with open("test9.txt") as file:
             if t == "read":
@@ -39,3 +39,10 @@ class FileMane:
             print file.readline().decode("GBK").encode("utf-8")
             print file.seek(-300, 2)
             print file.readline().decode("GBK").encode("utf-8")
+
+    def filter_comments(self):
+        with open ("test9.txt") as file:
+            com = re.compile("^(?! *#).*$")
+            mat = file.readlines()[0].decode("GBK").encode("utf-8")
+            if  re.match(com, mat):
+                self.filter_comment.append(mat)

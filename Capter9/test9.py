@@ -34,3 +34,9 @@ class Capter9Test(unittest.TestCase):
     def test_fileman_seek(self):
         file = FileMane()
         file.seek()
+
+    def test_filter_comments(self):
+        file = FileMane()
+        file.filter_comments()
+        for line in file.filter_comment:
+            print line

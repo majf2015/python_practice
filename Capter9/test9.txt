@@ -1,4 +1,4 @@
-领取方式：
+    #领取方式：
 注册有礼（没有发放数量限制）（没有技师打赏选项）
 当商家创建注册有礼券后，注册用户进入会所界面，既可以获得注册有礼券，商家手动终止为止。
 When businesses to create a registration certificate, registered user interface into the club, can either be registered with gift certificates, merchant manually terminated.
